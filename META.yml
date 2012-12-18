@@ -25,7 +25,7 @@ no_index:
     - xt
 requires:
   Moo: 1.000006
-  MooX::Struct: 0.008
+  MooX::Struct: 0.009
   Throwable::Error: 0.200000
   namespace::clean: 0
   perl: 5.8.0
@@ -34,4 +34,4 @@ resources:
   homepage: https://metacpan.org/release/Throwable-Factory
   license: http://dev.perl.org/licenses/
   repository: https://bitbucket.org/tobyink/p5-throwable-factory
-version: 0.000_02
+version: 0.000_03
