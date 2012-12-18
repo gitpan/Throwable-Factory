@@ -6,6 +6,10 @@ Home page:    <https://metacpan.org/release/Throwable-Factory>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=Throwable-Factory>
 Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
+0.000_02  2012-12-18
+
+ - Use namespace::clean instead of namespace::sweep.
+
 0.000_01  2012-12-18  # Developer preview
 
 

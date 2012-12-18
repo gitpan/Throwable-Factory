@@ -9,7 +9,7 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.000_01';
+	our $VERSION   = '0.000_02';
 
 	use MooX::Struct -retain,
 		Base => [
@@ -33,11 +33,11 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory::Base;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.000_01';
+	our $VERSION   = '0.000_02';
 	
 	use Data::Dumper ();
 	use Moo;
-	use namespace::sweep 0.006;
+	use namespace::clean;
 	extends 'MooX::Struct';
 	
 	sub description { 'Generic exception' }
@@ -84,11 +84,11 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory::Struct::Processor;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.000_01';
+	our $VERSION   = '0.000_02';
 	
 	use Moo;
 	use Carp;
-	use namespace::sweep 0.006;
+	use namespace::clean;
 	extends 'MooX::Struct::Processor';
 	
 	has '+base' => (
