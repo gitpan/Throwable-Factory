@@ -2,31 +2,31 @@ NAME
     Throwable::Factory - lightweight Moo-based exception class factory
 
 SYNOPSIS
-            use Throwable::Factory
-                    GeneralException => undef,
-                    FileException    => [qw( $filename )],
-                    NetworkException => [qw( $remote_addr $remote_port )],
-            ;
-        
-            # Just a message...
-            #
-            GeneralException->throw("Something bad happened");
-        
-            # Or use named parameters...
-            #
-            GeneralException->throw(message => "Something awful happened");
+       use Throwable::Factory
+          GeneralException => undef,
+          FileException    => [qw( $filename )],
+          NetworkException => [qw( $remote_addr $remote_port )],
+       ;
+   
+       # Just a message...
+       #
+       GeneralException->throw("Something bad happened");
+   
+       # Or use named parameters...
+       #
+       GeneralException->throw(message => "Something awful happened");
 
-            # The message can be a positional parameter, even while the
-            # rest are named.
-            #
-            FileException->throw(
-                    "Can't open file",
-                    filename => '/tmp/does-not-exist.txt',
-            );
+       # The message can be a positional parameter, even while the
+       # rest are named.
+       #
+       FileException->throw(
+          "Can't open file",
+          filename => '/tmp/does-not-exist.txt',
+       );
 
-            # Or, they all can be a positional using an arrayref...
-            #
-            NetworkException->throw(["Timed out", "11.22.33.44", 555]);
+       # Or, they all can be a positional using an arrayref...
+       #
+       NetworkException->throw(["Timed out", "11.22.33.44", 555]);
 
 DESCRIPTION
     "Throwable::Factory" is an Exception::Class-like exception factory using
@@ -57,17 +57,17 @@ DESCRIPTION
     hashrefs to describe the exception classes. The following two
     definitions are equivalent:
 
-            # MooX::Struct-style
-            use Throwable::Factory FooBar => [
-                    -extends => ['Foo'],
-                    qw( foo bar ),
-            ];
-        
-            # Exception::Class-style
-            use Throwable::Factory FooBar => {
-                    isa    => 'Foo',
-                    fields => [qw( foo bar )],
-            };
+       # MooX::Struct-style
+       use Throwable::Factory FooBar => [
+          -extends => ['Foo'],
+          qw( foo bar ),
+       ];
+   
+       # Exception::Class-style
+       use Throwable::Factory FooBar => {
+          isa    => 'Foo',
+          fields => [qw( foo bar )],
+       };
 
 BUGS
     Please report any bugs to
