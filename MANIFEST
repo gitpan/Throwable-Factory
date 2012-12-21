@@ -30,9 +30,11 @@ meta/changes.pret
 meta/doap.pret
 meta/makefile.pret
 meta/people.pret
+NEWS
 README
 t/01basic.t
 t/02ecstyle.t
+t/03baseclass.t
 t/ec/basic.t
 t/ec/context.t
 t/ec/ecb-standalone.t

@@ -64,7 +64,11 @@ Files: t/02ecstyle.t
 Copyright: This software is copyright (c) 2012 by Toby Inkster.
 License: GPL-1.0+ or Artistic-1.0
 
-Files: Changes HACKING LICENSE MANIFEST.SKIP Makefile.PL README inc/Module/Package/Dist/RDF.pm meta/changes.pret meta/doap.pret meta/makefile.pret meta/people.pret t/ec/basic.t t/ec/context.t t/ec/ecb-standalone.t
+Files: t/03baseclass.t
+Copyright: This software is copyright (c) 2012 by Toby Inkster.
+License: GPL-1.0+ or Artistic-1.0
+
+Files: Changes HACKING LICENSE MANIFEST.SKIP Makefile.PL NEWS README inc/Module/Package/Dist/RDF.pm meta/changes.pret meta/doap.pret meta/makefile.pret meta/people.pret t/ec/basic.t t/ec/context.t t/ec/ecb-standalone.t
 Copyright: Unknown
 License: Unknown
 

@@ -9,7 +9,7 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.002';
+	our $VERSION   = '0.003';
 	
 	use MooX::Struct -retain,
 		Base => [
@@ -33,7 +33,7 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory::Base;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.002';
+	our $VERSION   = '0.003';
 	
 	use Data::Dumper ();
 	use Moo;
@@ -51,7 +51,7 @@ use Throwable::Error 0.200000 ();
 		my $class = shift;
 		return +{} unless @_;
 		unshift @_, 'message' if @_ % 2 and not ref $_[0];
-		$class->SUPER::BUILDARGS(@_) if @_;
+		$class->SUPER::BUILDARGS(@_);
 	}
 	
 	sub TO_STRING
@@ -84,7 +84,7 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory::Struct::Processor;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.002';
+	our $VERSION   = '0.003';
 	
 	use Moo;
 	use Carp;
