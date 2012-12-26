@@ -69,6 +69,57 @@ DESCRIPTION
           fields => [qw( foo bar )],
        };
 
+  Exception Taxonomy
+    It can be useful to divide your exceptions into broad categories to
+    allow your caller to catch great swathes of exceptions easily, including
+    new exceptions you add in future versions of your module.
+
+    Throwable::Factory includes four exception categories that you may use
+    for this purpose. These are implemented as role packages with no
+    associated methods, so can be tested for using the "DOES" method (see
+    UNIVERSAL).
+
+    *   Throwable::Taxonomy::Caller - the caller passed bad or unexpected
+        parameters.
+
+    *   Throwable::Taxonomy::Environment - a problem was found in the
+        software's operating environment; e.g. network connection
+        unavailable, lack of disk space.
+
+    *   Throwable::Taxonomy::NotImplemented - the caller requested a feature
+        that is not currently implemented, but may be in the future.
+
+    It is easy to apply these roles to your exception classes:
+
+       use Throwable::Factory
+          ErrTooBig   => [qw( $maximum! -notimplemented )],
+          ErrTooSmall => [qw( $minimum! -notimplemented )],
+       ;
+       use Try::Tiny;
+   
+       sub calculation
+       {
+          my $input = shift;
+          if ($input > 12) {
+             ErrToBig->throw(
+                "Inputs over 12 are not currently supported",
+                maximum => 12,
+             );
+          }
+          ...;
+       }
+   
+       try {
+          calculation(13);
+       }
+       catch {
+          warn $_ if $_->DOES('Throwable::Taxonomy::NotImplemented');
+       };
+
+    The "-notimplemented" shortcut expands to "-with =>
+    ['Throwable::Taxonomy::NotImplemented']". Similarly "-caller" and
+    "-environment" shortcuts exist.
+
 BUGS
     Please report any bugs to
     <http://rt.cpan.org/Dist/Display.html?Queue=Throwable-Factory>.
