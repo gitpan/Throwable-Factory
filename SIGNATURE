@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.68.
+signed via the Module::Signature module, version 0.70.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,15 +14,15 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 c28242e085d069ff8b7ebdcd327adb55ad0b1efa COPYRIGHT
-SHA1 0e14b20c3ece4a330379bc6911977dc98a99a56c Changes
+SHA1 93bd33c4b0b3d3249b017a3d0273ee9d2fc9cfb1 COPYRIGHT
+SHA1 349cca0a75bdf2d9ca1877ce9eac264b672710fb Changes
 SHA1 58e47fed556f626572681c48158a3ecd44ce179d HACKING
-SHA1 cc087c3dd6e1b519c680e68cd0231735a68300a0 LICENSE
-SHA1 007b5eb4a287ebe5af7d29aa55001364fe4572f9 MANIFEST
-SHA1 ce0fecbe454e87d1d0db4e0a11dc5e17e03a1b16 META.yml
+SHA1 937d452c5c4069f4cda9ffaf45a33f1eb5f060e8 LICENSE
+SHA1 11a6469b4c37d806da0905cf4273dec0c6322fcf MANIFEST
+SHA1 3082fbca8a39bc6a1a989d9b1a3c3cb7b5fb8f10 META.yml
 SHA1 b9d5dd0b476253d37384aed42664179605286153 Makefile.PL
 SHA1 93cc2cd297413e99c613d0a952a3ac0e7a664371 NEWS
-SHA1 0f94f793e21be483eaf3226f60a6947dac374413 README
+SHA1 9982b7aa115d4d8b197bfe0e195feff4afda5325 README
 SHA1 06c410f05488c1612ed66b06d3a86b2580581e4a inc/Module/AutoInstall.pm
 SHA1 8a924add836b60fb23b25c8506d45945e02f42f4 inc/Module/Install.pm
 SHA1 61ab1dd37e33ddbe155907ce51df8a3e56ac8bbf inc/Module/Install/AutoInstall.pm
@@ -43,22 +43,23 @@ SHA1 0e0eed2e69d9583081868cf4f220068d0a018568 inc/Scalar/Util.pm
 SHA1 feb933cefe2e3762e8322bd6071a2499f3440da1 inc/YAML/Tiny.pm
 SHA1 8105c0510a773b56840995fb4dd2dc64fe9ddaee inc/unicore/Name.pm
 SHA1 36df501c7c9b73c282c5174ed54d8283b2f2cbf2 inc/utf8.pm
-SHA1 94d9fdaa3024e7085e3ebe8b6dd023ce931cd4c2 lib/Throwable/Factory.pm
-SHA1 827299c633e39beadf4564da28fa85dc666ed23c meta/changes.pret
+SHA1 f53c1da305923883b8509cafb54c6ff7ef5d6b51 lib/Throwable/Factory.pm
+SHA1 54772eeb898787775a5337157816c3834c776308 meta/changes.pret
 SHA1 eea02f9125e81632bc1f0b443aeaf2b92fa0f960 meta/doap.pret
-SHA1 de909e80fcfdd812e63df5ff19b789f80c02e2f7 meta/makefile.pret
+SHA1 c01d0e2fcbd4f42d760b2d3f4815ccc6072d87ec meta/makefile.pret
 SHA1 a151cff74b5f29c00381a14d4ec8726e3763b6b2 meta/people.pret
-SHA1 759c2ecf31ef10e35a32a85d68acceb95b021d67 t/01basic.t
-SHA1 fb53a07c707828f9687f447083b5fad4d1dfc3c5 t/02ecstyle.t
-SHA1 aaf5e122b45f64ae40634ac4f32fe741898cdee2 t/03baseclass.t
-SHA1 25121a48c18f70c65cfc0cfb1ee25e95db1469b4 t/04taxonomy.t
+SHA1 3472e00082f6fa11fdf6d08b5d285585fb22565d t/01basic.t
+SHA1 b7dd0bdae7ce0f645fae8d3aee53a70e60f60e35 t/02ecstyle.t
+SHA1 e111f5824403283bdf2be4a38670472d3ab3982d t/03baseclass.t
+SHA1 68641a151758daba6052f74aff0b433e1d65f62f t/04taxonomy.t
+SHA1 7772d0f22f4f656a8ba34f973308332af2c5031f t/05ttbc.t
 SHA1 7769204726ad37b9cb4cb427aaddc7345085a8fd t/ec/basic.t
 SHA1 15772f223f3371775e8b9a9064c3007e59039c56 t/ec/context.t
 SHA1 33a87c86bf0f1002470d326596fe4ee6d3a0f25d t/ec/ecb-standalone.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.10 (GNU/Linux)
+Version: GnuPG v1.4.11 (GNU/Linux)
 
-iEYEARECAAYFAlDbcPQACgkQzr+BKGoqfTlXogCfVxPsO9NDn/5MtEEALmfn2qnX
-YZcAnivX6gY3MfwGD2Nm+k81pLHd/Xag
-=blVW
+iEYEARECAAYFAlEsj5IACgkQzr+BKGoqfTl0lgCggYzY7qe1aTs/QUSrjgDY5y8/
++/oAn0SS20rzglRdVxoiOi42LWV2iUJV
+=QH6D
 -----END PGP SIGNATURE-----

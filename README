@@ -74,7 +74,7 @@ DESCRIPTION
     allow your caller to catch great swathes of exceptions easily, including
     new exceptions you add in future versions of your module.
 
-    Throwable::Factory includes four exception categories that you may use
+    Throwable::Factory includes three exception categories that you may use
     for this purpose. These are implemented as role packages with no
     associated methods, so can be tested for using the "DOES" method (see
     UNIVERSAL).
@@ -95,13 +95,13 @@ DESCRIPTION
           ErrTooBig   => [qw( $maximum! -notimplemented )],
           ErrTooSmall => [qw( $minimum! -notimplemented )],
        ;
-       use Try::Tiny;
+       use Try::Tiny::ByClass;
    
        sub calculation
        {
           my $input = shift;
           if ($input > 12) {
-             ErrToBig->throw(
+             ErrTooBig->throw(
                 "Inputs over 12 are not currently supported",
                 maximum => 12,
              );
@@ -112,9 +112,11 @@ DESCRIPTION
        try {
           calculation(13);
        }
-       catch {
-          warn $_ if $_->DOES('Throwable::Taxonomy::NotImplemented');
-       };
+       catch_case [
+          +ErrTooBig                            => sub { warn "Too big!" },
+          +ErrTooSmall                          => sub { warn "Too small!" },
+          "Throwable::Taxonomy::NotImplemented" => sub { warn $_ },
+       ];
 
     The "-notimplemented" shortcut expands to "-with =>
     ['Throwable::Taxonomy::NotImplemented']". Similarly "-caller" and
@@ -131,13 +133,14 @@ SEE ALSO
     This factory is inspired by Exception::Class, and for simple uses should
     be roughly compatible.
 
-    Use Try::Tiny or TryCatch if you need a try/catch mechanism.
+    Use Try::Tiny, Try::Tiny::ByClass or TryCatch if you need a try/catch
+    mechanism.
 
 AUTHOR
     Toby Inkster <tobyink@cpan.org>.
 
 COPYRIGHT AND LICENCE
-    This software is copyright (c) 2012 by Toby Inkster.
+    This software is copyright (c) 2012-2013 by Toby Inkster.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

@@ -5,6 +5,7 @@ author:
 build_requires:
   ExtUtils::MakeMaker: 6.59
   Test::More: 0.88
+  Test::Requires: 0
   Try::Tiny: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.59
@@ -23,6 +24,8 @@ no_index:
     - inc
     - t
     - xt
+recommends:
+  Try::Tiny::ByClass: 0
 requires:
   Moo: 1.000006
   MooX::Struct: 0.009
@@ -34,4 +37,4 @@ resources:
   homepage: https://metacpan.org/release/Throwable-Factory
   license: http://dev.perl.org/licenses/
   repository: https://bitbucket.org/tobyink/p5-throwable-factory
-version: 0.004
+version: 0.005

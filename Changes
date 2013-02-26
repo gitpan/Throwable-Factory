@@ -6,6 +6,14 @@ Home page:    <https://metacpan.org/release/Throwable-Factory>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=Throwable-Factory>
 Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
+0.005  2013-02-26
+
+ - (Documentation) Document taxonomy test case.
+ - (Documentation) Exception taxonomy documentation incorrectly stated that
+   there were four built-in categories, when only three were listed. Fixed.
+ - (Documentation) Fix typo in code sample.
+ - (Documentation) Give example of usage with Try::Tiny::ByClass.
+
 0.004  2012-12-26  # Boxing Day
 
  - (Addition) Exception taxonomy.

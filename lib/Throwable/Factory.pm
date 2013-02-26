@@ -9,7 +9,7 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.004';
+	our $VERSION   = '0.005';
 	
 	our @SHORTCUTS;
 	
@@ -53,7 +53,7 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory::Base;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.004';
+	our $VERSION   = '0.005';
 	
 	use Data::Dumper ();
 	use Moo;
@@ -104,7 +104,7 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory::Struct::Processor;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.004';
+	our $VERSION   = '0.005';
 	
 	use Moo;
 	use Carp;
@@ -256,7 +256,7 @@ It can be useful to divide your exceptions into broad categories to allow
 your caller to catch great swathes of exceptions easily, including new
 exceptions you add in future versions of your module.
 
-Throwable::Factory includes four exception categories that you may use
+Throwable::Factory includes three exception categories that you may use
 for this purpose. These are implemented as role packages with no associated
 methods, so can be tested for using the C<DOES> method (see L<UNIVERSAL>).
 
@@ -286,13 +286,13 @@ It is easy to apply these roles to your exception classes:
       ErrTooBig   => [qw( $maximum! -notimplemented )],
       ErrTooSmall => [qw( $minimum! -notimplemented )],
    ;
-   use Try::Tiny;
+   use Try::Tiny::ByClass;
    
    sub calculation
    {
       my $input = shift;
       if ($input > 12) {
-         ErrToBig->throw(
+         ErrTooBig->throw(
             "Inputs over 12 are not currently supported",
             maximum => 12,
          );
@@ -303,9 +303,11 @@ It is easy to apply these roles to your exception classes:
    try {
       calculation(13);
    }
-   catch {
-      warn $_ if $_->DOES('Throwable::Taxonomy::NotImplemented');
-   };
+   catch_case [
+      +ErrTooBig                            => sub { warn "Too big!" },
+      +ErrTooSmall                          => sub { warn "Too small!" },
+      "Throwable::Taxonomy::NotImplemented" => sub { warn $_ },
+   ];
 
 The C<< -notimplemented >> shortcut expands to
 C<< -with => ['Throwable::Taxonomy::NotImplemented'] >>. Similarly
@@ -324,7 +326,8 @@ the L<Throwable> and L<StackTrace::Auto> roles.
 This factory is inspired by L<Exception::Class>, and for simple uses should
 be roughly compatible.
 
-Use L<Try::Tiny> or L<TryCatch> if you need a try/catch mechanism.
+Use L<Try::Tiny>, L<Try::Tiny::ByClass> or L<TryCatch> if you need a
+try/catch mechanism.
 
 =head1 AUTHOR
 
@@ -332,7 +335,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT AND LICENCE
 
-This software is copyright (c) 2012 by Toby Inkster.
+This software is copyright (c) 2012-2013 by Toby Inkster.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
