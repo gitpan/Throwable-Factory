@@ -9,7 +9,7 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.005';
+	our $VERSION   = '0.006';
 	
 	our @SHORTCUTS;
 	
@@ -53,7 +53,7 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory::Base;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.005';
+	our $VERSION   = '0.006';
 	
 	use Data::Dumper ();
 	use Moo;
@@ -104,7 +104,7 @@ use Throwable::Error 0.200000 ();
 {
 	package Throwable::Factory::Struct::Processor;
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.005';
+	our $VERSION   = '0.006';
 	
 	use Moo;
 	use Carp;
@@ -312,6 +312,14 @@ It is easy to apply these roles to your exception classes:
 The C<< -notimplemented >> shortcut expands to
 C<< -with => ['Throwable::Taxonomy::NotImplemented'] >>. Similarly
 C<< -caller >> and C<< -environment >> shortcuts exist.
+
+(Note the plus signs in the C<catch_case> above; this ensures C<ErrTooBig>
+and C<ErrToString> are not auto-quoted by the fat comma.)
+
+=head1 CAVEATS
+
+Exceptions built by this factory inherit from L<MooX::Struct>; see the
+B<CAVEATS> section from the MooX::Struct documentation.
 
 =head1 BUGS
 

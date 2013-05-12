@@ -6,6 +6,11 @@ Home page:    <https://metacpan.org/release/Throwable-Factory>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=Throwable-Factory>
 Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
+0.006  2013-05-12
+
+ - (Documentation) Add CAVEATS section to documentation.
+   ++$PERIGRIN
+
 0.005  2013-02-26
 
  - (Documentation) Document taxonomy test case.

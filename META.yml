@@ -36,5 +36,5 @@ resources:
   bugtracker: http://rt.cpan.org/Dist/Display.html?Queue=Throwable-Factory
   homepage: https://metacpan.org/release/Throwable-Factory
   license: http://dev.perl.org/licenses/
-  repository: https://bitbucket.org/tobyink/p5-throwable-factory
-version: 0.005
+  repository: https://github.com/tobyink/p5-throwable-factory
+version: 0.006

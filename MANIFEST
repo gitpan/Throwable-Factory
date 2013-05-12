@@ -1,6 +1,7 @@
 Changes
+CONTRIBUTING
 COPYRIGHT
-HACKING
+CREDITS
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -17,14 +18,12 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 inc/Module/Package.pm
 inc/Module/Package/Dist/RDF.pm
-inc/Scalar/Util.pm
-inc/unicore/Name.pm
-inc/utf8.pm
 inc/YAML/Tiny.pm
 lib/Throwable/Factory.pm
 LICENSE
 Makefile.PL
 MANIFEST			This list of files
+META.ttl
 META.yml
 meta/changes.pret
 meta/doap.pret
