@@ -29,33 +29,33 @@ SYNOPSIS
        NetworkException->throw(["Timed out", "11.22.33.44", 555]);
 
 DESCRIPTION
-    "Throwable::Factory" is an Exception::Class-like exception factory using
+    `Throwable::Factory` is an Exception::Class-like exception factory using
     MooX::Struct.
 
-    All exception classes built using "Throwable::Factory" are MooX::Struct
-    structs, but will automatically include a "message" attribute, will
+    All exception classes built using `Throwable::Factory` are MooX::Struct
+    structs, but will automatically include a `message` attribute, will
     compose the Throwable and StackTrace::Auto roles, and contain the
     following convenience methods:
 
-    "error"
-        Read-only alias for the "message" attribute/field.
+    `error`
+        Read-only alias for the `message` attribute/field.
 
-    "package"
+    `package`
         Get the package for the first frame on the stack trace.
 
-    "file"
+    `file`
         Get the file name for the first frame on the stack trace.
 
-    "line"
+    `line`
         Get the line number for the first frame on the stack trace.
 
-    They provide a "BUILDARGS" method which means that if their constructor
-    is called with an odd number of arguments, the first is taken to be the
+    They provide a `BUILDARGS` method which means that if their constructor is
+    called with an odd number of arguments, the first is taken to be the
     message, and the rest named parameters.
 
     Additionally, the factory can be called with Exception::Class-like
-    hashrefs to describe the exception classes. The following two
-    definitions are equivalent:
+    hashrefs to describe the exception classes. The following two definitions
+    are equivalent:
 
        # MooX::Struct-style
        use Throwable::Factory FooBar => [
@@ -70,21 +70,21 @@ DESCRIPTION
        };
 
   Exception Taxonomy
-    It can be useful to divide your exceptions into broad categories to
-    allow your caller to catch great swathes of exceptions easily, including
-    new exceptions you add in future versions of your module.
+    It can be useful to divide your exceptions into broad categories to allow
+    your caller to catch great swathes of exceptions easily, including new
+    exceptions you add in future versions of your module.
 
     Throwable::Factory includes three exception categories that you may use
     for this purpose. These are implemented as role packages with no
-    associated methods, so can be tested for using the "DOES" method (see
+    associated methods, so can be tested for using the `DOES` method (see
     UNIVERSAL).
 
     *   Throwable::Taxonomy::Caller - the caller passed bad or unexpected
         parameters.
 
     *   Throwable::Taxonomy::Environment - a problem was found in the
-        software's operating environment; e.g. network connection
-        unavailable, lack of disk space.
+        software's operating environment; e.g. network connection unavailable,
+        lack of disk space.
 
     *   Throwable::Taxonomy::NotImplemented - the caller requested a feature
         that is not currently implemented, but may be in the future.
@@ -118,12 +118,12 @@ DESCRIPTION
           "Throwable::Taxonomy::NotImplemented" => sub { warn $_ },
        ];
 
-    The "-notimplemented" shortcut expands to "-with =>
-    ['Throwable::Taxonomy::NotImplemented']". Similarly "-caller" and
-    "-environment" shortcuts exist.
+    The `-notimplemented` shortcut expands to `-with =>
+    ['Throwable::Taxonomy::NotImplemented']`. Similarly `-caller` and
+    `-environment` shortcuts exist.
 
-    (Note the plus signs in the "catch_case" above; this ensures "ErrTooBig"
-    and "ErrToString" are not auto-quoted by the fat comma.)
+    (Note the plus signs in the `catch_case` above; this ensures `ErrTooBig`
+    and `ErrToString` are not auto-quoted by the fat comma.)
 
 CAVEATS
     Exceptions built by this factory inherit from MooX::Struct; see the
@@ -134,8 +134,8 @@ BUGS
     <http://rt.cpan.org/Dist/Display.html?Queue=Throwable-Factory>.
 
 SEE ALSO
-    Exceptions built by this factory inherit from MooX::Struct and compose
-    the Throwable and StackTrace::Auto roles.
+    Exceptions built by this factory inherit from MooX::Struct and compose the
+    Throwable and StackTrace::Auto roles.
 
     This factory is inspired by Exception::Class, and for simple uses should
     be roughly compatible.
@@ -149,8 +149,8 @@ AUTHOR
 COPYRIGHT AND LICENCE
     This software is copyright (c) 2012-2013 by Toby Inkster.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+    This is free software; you can redistribute it and/or modify it under the
+    same terms as the Perl 5 programming language system itself.
 
 DISCLAIMER OF WARRANTIES
     THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
